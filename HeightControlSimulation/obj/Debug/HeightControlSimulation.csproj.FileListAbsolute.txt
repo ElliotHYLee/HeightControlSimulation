@@ -1,0 +1,14 @@
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\bin\Debug\HeightControlSimulation.exe.config
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation.csprojResolveAssemblyReference.cache
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\MainWindow.g.cs
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\App.g.cs
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation_MarkupCompile.cache
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation_MarkupCompile.lref
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\bin\Debug\HeightControlSimulation.exe
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\bin\Debug\HeightControlSimulation.pdb
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\MainWindow.baml
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation.g.resources
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation.Properties.Resources.resources
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation.csproj.GenerateResource.Cache
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation.exe
+D:\GitHub\HeightControlSimulation\HeightControlSimulation\obj\Debug\HeightControlSimulation.pdb
