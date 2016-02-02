@@ -22,12 +22,12 @@
         <Label x:Name="pro_Copy2" Content="totalAcc" HorizontalAlignment="Left" Height="38" Margin="577,288,0,0" VerticalAlignment="Top" Width="52"/>
         <TextBox x:Name="txtPwm" HorizontalAlignment="Left" Height="34" Margin="634,240,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
         <Label x:Name="label22" Content="pwm" HorizontalAlignment="Left" Height="39" Margin="577,236,0,0" VerticalAlignment="Top" Width="52"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="36" Margin="854,392,0,0" VerticalAlignment="Top" Width="112" Click="button_Click"/>
+        <Button x:Name="button" Content="Reset Target Height" HorizontalAlignment="Left" Height="36" Margin="804,424,0,0" VerticalAlignment="Top" Width="112" Click="button_Click"/>
         <TextBox x:Name="txtThrust" HorizontalAlignment="Left" Height="34" Margin="872,240,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
         <Label x:Name="label22_Copy" Content="Thrust" HorizontalAlignment="Left" Height="39" Margin="815,236,0,0" VerticalAlignment="Top" Width="52"/>
-        <TextBox x:Name="txtTarget" HorizontalAlignment="Left" Height="34" Margin="675,390,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
-        <Label x:Name="pro_Copy3" Content="target Height" HorizontalAlignment="Left" Height="38" Margin="590,390,0,0" VerticalAlignment="Top" Width="80"/>
-        <Label x:Name="pro_Copy4" Content="meters" HorizontalAlignment="Left" Height="38" Margin="747,392,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="txtTarget" HorizontalAlignment="Left" Height="34" Margin="674,426,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="pro_Copy3" Content="target Height" HorizontalAlignment="Left" Height="38" Margin="589,426,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="pro_Copy4" Content="meters" HorizontalAlignment="Left" Height="38" Margin="746,428,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="txtKp" HorizontalAlignment="Left" Height="34" Margin="634,494,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
         <Label x:Name="pro_Copy5" Content="Kp" HorizontalAlignment="Left" Height="38" Margin="590,494,0,0" VerticalAlignment="Top" Width="39"/>
         <TextBox x:Name="txtKd_up" HorizontalAlignment="Left" Height="34" Margin="634,537,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
@@ -40,6 +40,10 @@
         <Label x:Name="pro_Copy8" Content="Kd down" HorizontalAlignment="Left" Height="38" Margin="706,537,0,0" VerticalAlignment="Top" Width="61"/>
         <TextBox x:Name="txtVel" HorizontalAlignment="Left" Height="34" Margin="872,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
         <Label x:Name="pro_Copy9" Content="Velocity" HorizontalAlignment="Left" Height="38" Margin="815,288,0,0" VerticalAlignment="Top" Width="52"/>
+        <Button x:Name="button_Copy" Content="Reset Height" HorizontalAlignment="Left" Height="36" Margin="804,377,0,0" VerticalAlignment="Top" Width="112" Click="btnResetHeight"/>
+        <TextBox x:Name="txtPosY" HorizontalAlignment="Left" Height="34" Margin="674,379,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="pro_Copy10" Content="Vertical Pos" HorizontalAlignment="Left" Height="38" Margin="589,379,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="pro_Copy11" Content="meters" HorizontalAlignment="Left" Height="38" Margin="746,381,0,0" VerticalAlignment="Top" Width="80"/>
 
     </Grid>
 </Window>

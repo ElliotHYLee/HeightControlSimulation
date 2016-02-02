@@ -70,7 +70,7 @@ namespace HeightControlSimulation
             //Console.WriteLine("ctrl working");
             double pro=0, dir=0, error, totalPwm;
             
-
+            // units in milli meters
             error = _targetPos - currentPos * 1000;
 
             #region proportional

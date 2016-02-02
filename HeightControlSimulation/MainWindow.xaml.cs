@@ -67,15 +67,16 @@ namespace HeightControlSimulation
             ch = this.canv.Height;
             w = this.circle.Width;
             h = this.circle.Height;
+            txtPosY.Text = "5";
 
             myObj = new RigidBody();
             myObj.radius = w / 2;
             myWorld = new World(myObj);
             myCtrl = new Controller(myObj, this);
 
-            myCtrl.Kp = 1;
-            myCtrl.Kd_up = 1;
-            myCtrl.Kd_down = 8;
+            myCtrl.Kp = 0.5;
+            myCtrl.Kd_up = 2;
+            myCtrl.Kd_down = 16;
             myCtrl.Ki = 0.1;
 
             txtKp.Text = myCtrl.Kp.ToString();
@@ -133,7 +134,7 @@ namespace HeightControlSimulation
 
             myWorld.calculateNextMathCoord();
 
-            if (myObj.posY >5 || myObj.posY < 0)
+            if (myObj.posY >5.5 || myObj.posY < 0)
             {
                 Console.WriteLine("pos = " + myObj.posY);
                 Console.WriteLine("timer stops");
@@ -185,6 +186,20 @@ namespace HeightControlSimulation
             myCtrl.Kd_up = double.Parse(txtKd_up.Text);
             myCtrl.Ki = double.Parse(txtKi.Text);
            
+        }
+
+        private void btnResetHeight(object sender, RoutedEventArgs e)
+        {
+            if(ctrlIsOn)
+            {
+                myObj.posY = double.Parse(txtPosY.Text);
+            }
+            else
+            {
+                myObj.posY = double.Parse(txtPosY.Text);
+                myObj.IsDefult = false;
+            }
+            
         }
 
         private void poseCircle()

@@ -68,7 +68,7 @@ namespace HeightControlSimulation
         public bool setRepulsion(double prevAcc, double prevVel, double prevPos)
         {
             
-            if (freeFallCnt > 3)
+            if (freeFallCnt > 5)
            
             {
                 Console.WriteLine("repulse~");
@@ -103,7 +103,7 @@ namespace HeightControlSimulation
                     double interVel, KE, interPos, restDt;
                     interVel = prevVel + prevAcc * dt;
                     KE = 0.5 * myObj.mass * interVel * interVel;
-                    KE = KE * 0.2;
+                    KE = KE * 0.1;
                     interVel = Math.Sqrt(KE / myObj.mass * 2);
                     interPos = 0;
                     restDt = tInterval - dt;
