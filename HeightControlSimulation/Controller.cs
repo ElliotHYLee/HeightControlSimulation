@@ -11,21 +11,24 @@ namespace HeightControlSimulation
         private double _targetPos;
         private double _prevErr;
         private RigidBody _myobj;
-        public Controller(RigidBody obj)
+        private MainWindow _main;
+
+        public Controller(RigidBody obj, MainWindow x)
         {
             _targetPos = 2.5;
             _prevErr=0;
             _myobj = obj;
+            _main = x;
         }
 
         public void thrustControl(double currentPos)
         {
-            Console.WriteLine("ctrl working");
+            //Console.WriteLine("ctrl working");
             double pro=0, intgrl=0, dir=0, error, totalExtAcc;
             double kp, ki, kd;
 
             error = _targetPos - currentPos;
-            Console.WriteLine("err = " + error);
+            //Console.WriteLine("err = " + error);
             if (error < 0.001 && error > -0.001) return;
             
 
@@ -60,7 +63,7 @@ namespace HeightControlSimulation
             ki = 0;
             if (Math.Abs(error) < 0.5)
             {
-                ki = 100;
+                ki = 200;
             }
             
             dir = (_myobj.velY) * kd;
@@ -82,11 +85,20 @@ namespace HeightControlSimulation
             else
             {
                 _myobj.accY = _myobj.accY + totalExtAcc;
-                Console.WriteLine("total acc on body = " + _myobj.accY);
+                //Console.WriteLine("total acc on body = " + _myobj.accY);
             }
             
-
             _prevErr = error;
+
+            try
+            {
+                _main.txtError.Text = error.ToString().Substring(0, 5) + " meters";
+            }
+            catch(Exception e) {; }
+            
+
+
+
 
         }
 

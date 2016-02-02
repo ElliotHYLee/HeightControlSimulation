@@ -58,7 +58,7 @@ namespace HeightControlSimulation
             myObj = new RigidBody();
             myObj.radius = w / 2;
             myWorld = new World(myObj);
-            myCtrl = new Controller(myObj);
+            myCtrl = new Controller(myObj, this);
 
 
             angle = 90;
@@ -74,7 +74,6 @@ namespace HeightControlSimulation
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
             Timer.Tick += Timer_Tick;
-
             
             // Console.WriteLine(this.canv.Width + "  " + this.canv.Height);
             updateLine(angle);
@@ -109,11 +108,6 @@ namespace HeightControlSimulation
             {
                 poseCircle();
             }
-           
-
-           
-            
-
                 
         }
 

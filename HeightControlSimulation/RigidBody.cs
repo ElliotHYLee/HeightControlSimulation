@@ -24,7 +24,7 @@ namespace HeightControlSimulation
         {
             _m = 2.85;
             _g = -9.81;
-            _pos.Y = 0.0; // 5 meter
+            _pos.Y = 0; // 5 meter
             _PE = _m * _g * _pos.Y/100;
             _vel.X = 0;
             _vel.Y = 0;

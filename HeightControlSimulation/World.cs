@@ -48,14 +48,12 @@ namespace HeightControlSimulation
 
             if (myObj.accY !=0 )
             {
-                Console.Write("acc:{0:F3} ", myObj.accY);
-                Console.Write("vel:{0:F3} ", myObj.velY);
-                Console.Write(" pos:{0:F3} ", myObj.posY);
-                Console.Write(" KE:{0:F3}", myObj.KE);
-                Console.Write(" PE:{0:F3}", myObj.PE);
-                Console.WriteLine(" TE:{0:F3}", myObj.PE + myObj.KE);
-                
-
+                //Console.Write("acc:{0:F3} ", myObj.accY);
+                //Console.Write("vel:{0:F3} ", myObj.velY);
+                //Console.Write(" pos:{0:F3} ", myObj.posY);
+                //Console.Write(" KE:{0:F3}", myObj.KE);
+                //Console.Write(" PE:{0:F3}", myObj.PE);
+                //Console.WriteLine(" TE:{0:F3}", myObj.PE + myObj.KE);
             }
             
 
@@ -100,7 +98,7 @@ namespace HeightControlSimulation
                     double interVel, KE, interPos, restDt;
                     interVel = prevVel + prevAcc * dt;
                     KE = 0.5 * myObj.mass * interVel * interVel;
-                    KE = KE * 0.3;
+                    KE = KE * 0.2;
                     interVel = Math.Sqrt(KE / myObj.mass * 2);
                     interPos = 0;
                     restDt = tInterval - dt;

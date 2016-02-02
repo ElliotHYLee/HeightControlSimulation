@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HeightControlSimulation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="691.157" Width="594.418">
+        Title="MainWindow" Height="691.157" Width="962.418">
     <Grid>
         <Canvas Name="canv" HorizontalAlignment="Left" Height="580" Margin="36,42,0,0" VerticalAlignment="Top" Width="500">
             <Ellipse Name="circle" Height="30" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="30"/>
         </Canvas>
+        <TextBox Name="txtError" HorizontalAlignment="Left" Height="34" Margin="634,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label Name="label" Content="error" HorizontalAlignment="Left" Height="39" Margin="577,65,0,0" VerticalAlignment="Top" Width="52"/>
 
     </Grid>
 </Window>
