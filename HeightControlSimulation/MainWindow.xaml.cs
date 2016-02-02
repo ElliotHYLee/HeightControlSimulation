@@ -36,10 +36,13 @@ namespace HeightControlSimulation
         double ch;
         double w;
         double h;
-  
+        
         double t;
 
+        private double targetHeight;
         double prevVel, prevPos, prevAcc;
+
+        bool ctrlIsOn;
 
 
         public MainWindow()
@@ -48,8 +51,18 @@ namespace HeightControlSimulation
             this.loaded();
         }
 
+        public void setTargetHeight(double x) //x in meters
+        {
+            this.targetHeight = x * 100;
+        }
+
         public void loaded()
         {
+            ctrlIsOn = false;
+            btnControllerSwitch.Content = "Turn On";
+            SolidColorBrush dd = new SolidColorBrush();
+            dd.Color = Colors.Green;
+            btnControllerSwitch.Background = dd;
             cw = this.canv.Width;
             ch = this.canv.Height;
             w = this.circle.Width;
@@ -60,6 +73,17 @@ namespace HeightControlSimulation
             myWorld = new World(myObj);
             myCtrl = new Controller(myObj, this);
 
+            myCtrl.Kp = 1;
+            myCtrl.Kd_up = 1;
+            myCtrl.Kd_down = 8;
+            myCtrl.Ki = 0.1;
+
+            txtKp.Text = myCtrl.Kp.ToString();
+            txtKd_up.Text = myCtrl.Kd_up.ToString();
+            txtKd_down.Text = myCtrl.Kd_down.ToString();
+            txtKi.Text = myCtrl.Ki.ToString();
+
+
 
             angle = 90;
             //timer values
@@ -69,7 +93,13 @@ namespace HeightControlSimulation
 
             highLine = new LineAttitude(this.canv);
             lowLine = new LineAttitude(this.canv);
+
+            
+
             targetLine = new LineAttitude(this.canv);
+
+            setTargetHeight(2.5);
+            txtTarget.Text = (targetHeight/100).ToString();
 
             Timer = new DispatcherTimer();
             Timer.Interval = new TimeSpan(0, 0, 0, 0, 1);
@@ -87,7 +117,7 @@ namespace HeightControlSimulation
             this.canv.Children.Clear();
             this.canv.Children.Add(this.highLine.getHorizontalLine(500));
             this.canv.Children.Add(this.lowLine.getHorizontalLine(-myObj.radius*2));
-            this.canv.Children.Add(this.targetLine.getHorizontalLine(250 - myObj.radius));
+            this.canv.Children.Add(this.targetLine.getHorizontalLine(targetHeight - myObj.radius));
             this.canv.Children.Add(this.circle);
         }
 
@@ -96,22 +126,66 @@ namespace HeightControlSimulation
         {
             t += tInterval;
 
-            myCtrl.thrustControl(myObj.posY);
+            if (ctrlIsOn)
+            {
+                myCtrl.thrustControl(myObj.posY);
+            }
+
             myWorld.calculateNextMathCoord();
 
             if (myObj.posY >5 || myObj.posY < 0)
             {
+                Console.WriteLine("pos = " + myObj.posY);
                 Console.WriteLine("timer stops");
                 Timer.Stop();
             }
             else
             {
                 poseCircle();
+                
             }
                 
         }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            double temp = double.Parse(txtTarget.Text);
+            setTargetHeight(temp);
+            updateLine(angle);
+            myCtrl.TargetPos = temp*1000;
+        }
 
+        private void btnControllerSwitch_Click(object sender, RoutedEventArgs e)
+        {
+            if(ctrlIsOn)
+            {
+                ctrlIsOn = false;
+                btnControllerSwitch.Content = "Trun On";
+                SolidColorBrush dd = new SolidColorBrush();
+                dd.Color = Colors.Green;
+                btnControllerSwitch.Background = dd;
+                myObj.extForce = 0;
+            }else
+            {
+                btnControllerSwitch.Content = "Trun Off";
+                SolidColorBrush dd = new SolidColorBrush();
+                dd.Color = Colors.Red;
+                btnControllerSwitch.Background = dd;
+                ctrlIsOn = true;
+            }
+            
+
+            myObj.IsDefult = false;
+        }
+
+        private void btnSetGains_Click(object sender, RoutedEventArgs e)
+        {
+            myCtrl.Kp = double.Parse(txtKp.Text);
+            myCtrl.Kd_down = double.Parse(txtKd_down.Text);
+            myCtrl.Kd_up = double.Parse(txtKd_up.Text);
+            myCtrl.Ki = double.Parse(txtKi.Text);
+           
+        }
 
         private void poseCircle()
         {

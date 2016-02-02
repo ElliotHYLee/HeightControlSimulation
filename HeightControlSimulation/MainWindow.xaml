@@ -5,13 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HeightControlSimulation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="691.157" Width="962.418">
+        Title="MainWindow" Height="691.157" Width="1100.418">
     <Grid>
         <Canvas Name="canv" HorizontalAlignment="Left" Height="580" Margin="36,42,0,0" VerticalAlignment="Top" Width="500">
             <Ellipse Name="circle" Height="30" Canvas.Left="0" Stroke="Black" Canvas.Top="0" Width="30"/>
         </Canvas>
         <TextBox Name="txtError" HorizontalAlignment="Left" Height="34" Margin="634,65,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
         <Label Name="label" Content="error" HorizontalAlignment="Left" Height="39" Margin="577,65,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtPro" HorizontalAlignment="Left" Height="34" Margin="634,109,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label x:Name="pro" Content="propor" HorizontalAlignment="Left" Height="39" Margin="577,109,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtDir" HorizontalAlignment="Left" Height="34" Margin="634,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label x:Name="pro_Copy" Content="Dir" HorizontalAlignment="Left" Height="39" Margin="577,153,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtInt" HorizontalAlignment="Left" Height="34" Margin="634,197,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label x:Name="pro_Copy1" Content="Integral" HorizontalAlignment="Left" Height="39" Margin="577,197,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtTotAcc" HorizontalAlignment="Left" Height="34" Margin="634,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label x:Name="pro_Copy2" Content="totalAcc" HorizontalAlignment="Left" Height="38" Margin="577,288,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtPwm" HorizontalAlignment="Left" Height="34" Margin="634,240,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label x:Name="label22" Content="pwm" HorizontalAlignment="Left" Height="39" Margin="577,236,0,0" VerticalAlignment="Top" Width="52"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="36" Margin="854,392,0,0" VerticalAlignment="Top" Width="112" Click="button_Click"/>
+        <TextBox x:Name="txtThrust" HorizontalAlignment="Left" Height="34" Margin="872,240,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label x:Name="label22_Copy" Content="Thrust" HorizontalAlignment="Left" Height="39" Margin="815,236,0,0" VerticalAlignment="Top" Width="52"/>
+        <TextBox x:Name="txtTarget" HorizontalAlignment="Left" Height="34" Margin="675,390,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="pro_Copy3" Content="target Height" HorizontalAlignment="Left" Height="38" Margin="590,390,0,0" VerticalAlignment="Top" Width="80"/>
+        <Label x:Name="pro_Copy4" Content="meters" HorizontalAlignment="Left" Height="38" Margin="747,392,0,0" VerticalAlignment="Top" Width="80"/>
+        <TextBox x:Name="txtKp" HorizontalAlignment="Left" Height="34" Margin="634,494,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="pro_Copy5" Content="Kp" HorizontalAlignment="Left" Height="38" Margin="590,494,0,0" VerticalAlignment="Top" Width="39"/>
+        <TextBox x:Name="txtKd_up" HorizontalAlignment="Left" Height="34" Margin="634,537,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="pro_Copy6" Content="Kd up" HorizontalAlignment="Left" Height="38" Margin="590,537,0,0" VerticalAlignment="Top" Width="44"/>
+        <TextBox x:Name="txtKi" HorizontalAlignment="Left" Height="34" Margin="634,584,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="67"/>
+        <Label x:Name="pro_Copy7" Content="Ki" HorizontalAlignment="Left" Height="38" Margin="590,584,0,0" VerticalAlignment="Top" Width="39"/>
+        <Button x:Name="btnControllerSwitch" Content="On/Off" HorizontalAlignment="Left" Height="36" Margin="958,599,0,0" VerticalAlignment="Top" Width="112" Click="btnControllerSwitch_Click"/>
+        <Button x:Name="btnSetGains" Content="Set Gain" HorizontalAlignment="Left" Height="36" Margin="815,599,0,0" VerticalAlignment="Top" Width="112" Click="btnSetGains_Click"/>
+        <TextBox x:Name="txtKd_down" HorizontalAlignment="Left" Height="34" Margin="772,537,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66"/>
+        <Label x:Name="pro_Copy8" Content="Kd down" HorizontalAlignment="Left" Height="38" Margin="706,537,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="txtVel" HorizontalAlignment="Left" Height="34" Margin="872,288,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="158"/>
+        <Label x:Name="pro_Copy9" Content="Velocity" HorizontalAlignment="Left" Height="38" Margin="815,288,0,0" VerticalAlignment="Top" Width="52"/>
 
     </Grid>
 </Window>

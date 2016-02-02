@@ -20,16 +20,30 @@ namespace HeightControlSimulation
         private double _r;
         private double _m;
         private double _g;
+        private bool _isDefault;
+
+
         public RigidBody()
         {
+            
             _m = 2.85;
             _g = -9.81;
-            _pos.Y = 0; // 5 meter
+            _pos.Y = 1; // 5 meter
             _PE = _m * _g * _pos.Y/100;
             _vel.X = 0;
             _vel.Y = 0;
             _acc.X = 0;
             _acc.Y = _g;
+
+            if (_pos.Y == 0) _isDefault = true;
+            else _isDefault = false;
+
+        }
+
+        public bool IsDefult
+        {
+            get { return _isDefault; }
+            set { _isDefault = value; }
         }
 
         public void setDefault()
@@ -42,6 +56,7 @@ namespace HeightControlSimulation
             _vel.Y = 0;
             _acc.X = 0;
             _acc.Y = 0;
+            _isDefault = true;
         }
 
         public double mass
@@ -71,8 +86,13 @@ namespace HeightControlSimulation
 
         public double accY
         {
-            get { return _acc.Y; }
+            get { return (_g + _extForce/_m); }
             set { _acc.Y = value; }
+        }
+        public double extForce
+        {
+            set { _extForce = value; }
+            get { return _extForce; }
         }
 
         public double posY

@@ -31,11 +31,16 @@ namespace HeightControlSimulation
         public void calculateNextMathCoord()
         {
 
+            if (myObj.IsDefult) return;
+
             double pos, vel;
             vel = myObj.velY + myObj.accY*_tInterval;
             pos = myObj.posY +  myObj.velY * _tInterval;
+
+
             if (pos < 0)
             {
+                //myObj.extForce += myObj.mass * 9.81;
                 setRepulsion(myObj.accY, myObj.velY, myObj.posY);
             }
             else
@@ -63,7 +68,7 @@ namespace HeightControlSimulation
         public bool setRepulsion(double prevAcc, double prevVel, double prevPos)
         {
             
-            if (freeFallCnt > 2)
+            if (freeFallCnt > 3)
            
             {
                 Console.WriteLine("repulse~");
@@ -112,8 +117,7 @@ namespace HeightControlSimulation
             }
             else
             {
-                if (freeFallCnt ==2)
-                {
+
                     myObj.setDefault();
                     Console.WriteLine("here");
                     
@@ -123,7 +127,7 @@ namespace HeightControlSimulation
                     Console.Write(" KE:{0:F3}", myObj.KE);
                     Console.Write(" PE:{0:F3}", myObj.PE);
                     Console.WriteLine(" TE:{0:F3}", myObj.PE + myObj.KE);
-                }
+             
 
             }
 

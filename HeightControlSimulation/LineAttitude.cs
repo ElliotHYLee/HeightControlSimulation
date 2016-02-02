@@ -31,7 +31,7 @@ namespace HeightControlSimulation
             this.line.Stroke = System.Windows.Media.Brushes.Black;
 
             double lineLength = this.canvasWidth /2  ;
-            Console.WriteLine("line length: " + lineLength);
+            //Console.WriteLine("line length: " + lineLength);
             this.line.X1 = origin -Math.Cos(angle * Math.PI / 180) * lineLength;
             this.line.Y1 = origin -Math.Sin(angle * Math.PI / 180) * lineLength;
 
