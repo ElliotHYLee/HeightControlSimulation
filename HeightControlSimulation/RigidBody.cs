@@ -25,8 +25,8 @@ namespace HeightControlSimulation
 
         public RigidBody()
         {
-            
-            _m = 2.85;
+
+            _m = 3.5;// 2.85;
             _g = -9.81;
             _pos.Y = 1; // 5 meter
             _PE = _m * _g * _pos.Y/100;
