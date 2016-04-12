@@ -77,6 +77,7 @@ namespace HeightControlSimulation
 
             
             pro = error * _kp;
+            Console.WriteLine("pro");
             #endregion
 
             #region diravitive
