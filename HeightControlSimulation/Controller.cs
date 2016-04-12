@@ -16,7 +16,7 @@ namespace HeightControlSimulation
         double _kp, _ki, _kd_up, _kd_down;
         public Controller(RigidBody obj, MainWindow x)
         {
-            _targetPos = 2.5*1000;
+            _targetPos = 0.4*1000;
             _prevErr=0;
             _myobj = obj;
             _main = x;
